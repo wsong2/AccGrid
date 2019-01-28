@@ -1,2 +1,0 @@
-# AccGrid
-WPF

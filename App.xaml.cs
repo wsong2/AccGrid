@@ -1,17 +1,15 @@
-using System;
-//using System.Globalization;
+﻿using System.Diagnostics;
+using System.Reflection;
 using System.Windows;
-//using System.Threading;
 
-namespace AccGrid
+namespace GridForm
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-		//Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-CN");
-		//Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("zh-CN");
-        //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("zh-CN");
+        private static readonly string location = Assembly.GetExecutingAssembly().Location;
+        internal static readonly string Version = FileVersionInfo.GetVersionInfo(location).ProductVersion;
     }
 }

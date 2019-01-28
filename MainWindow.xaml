@@ -1,0 +1,62 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GridForm"
+        xmlns:Properties="clr-namespace:GridForm.Properties" x:Class="GridForm.MainWindow"
+        mc:Ignorable="d"
+        Title="Job Contacts" Height="900" Width="1400" ResizeMode="NoResize" FontFamily="Calibri" FontSize="14">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*" />
+            <RowDefinition Height="830*" />
+        </Grid.RowDefinitions>
+        <Label x:Name="labelCount" Content="Count: 0" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="labelID" Content="" HorizontalAlignment="Left" Margin="100,7,0,0" VerticalAlignment="Top" Width="50" />
+        <Button x:Name="button" Content="Unselect" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Width="75"
+                Click="button_Click" 
+                Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="330,6,0,0" Text="" VerticalAlignment="Center" Width="340" IsEnabled="False" 
+                 ToolTip="Fields: ctt_date, ctt_hhmm, role, location, appli, reply, agency, staff, email, mobile, phone, remark and more."/>
+        <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="700,10,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"
+                Click="filter_Click" 
+                Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Label x:Name="labelOn" Content="" HorizontalAlignment="Left" Margin="800,7,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Version 0.0.0.0" HorizontalAlignment="Left" Margin="1200,7,0,0" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dataGrid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" 
+                  ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  HorizontalGridLinesBrush="#FFE5D0D0" VerticalGridLinesBrush="#FFE5D0D0" 
+                  SelectionChanged="dg_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding ctt_date, StringFormat=\{0:yyyy-MM-dd\}}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Time" Binding="{Binding ctt_hhmm}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Role" Binding="{Binding role}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Location" Binding="{Binding location}" IsReadOnly="True" />
+                <DataGridCheckBoxColumn Header="Applied" Binding="{Binding appli}" IsReadOnly="True" />
+                <DataGridCheckBoxColumn Header="Replied" Binding="{Binding reply}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Agency" Binding="{Binding agency}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Staff" Binding="{Binding staff}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Mobile" Binding="{Binding mobile}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Phone" Binding="{Binding phone}" IsReadOnly="True" />
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="BlanchedAlmond" Padding="10">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Remark: " Width="70" FontWeight="Bold" />
+                                <TextBlock Text="{Binding remark}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="More: " Width="70" FontWeight="Bold" />
+                                <TextBlock Text="{Binding more}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</Window>
