@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GridForm"
         xmlns:Properties="clr-namespace:GridForm.Properties" x:Class="GridForm.MainWindow"
         mc:Ignorable="d"
-        Title="Job Contacts" Height="900" Width="1400" ResizeMode="NoResize" FontFamily="Calibri" FontSize="14">
+        Title="Job Contacts" Height="900" Width="1500" ResizeMode="NoResize" FontFamily="Calibri" FontSize="14">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="36*" />
