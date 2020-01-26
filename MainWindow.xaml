@@ -32,14 +32,14 @@
                 <DataGridTextColumn Header="Date" Binding="{Binding ctt_date, StringFormat=\{0:yyyy-MM-dd\}}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Time" Binding="{Binding ctt_hhmm}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Role" Binding="{Binding role}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Client" Binding="{Binding client}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Location" Binding="{Binding location}" IsReadOnly="True" />
                 <DataGridCheckBoxColumn Header="Applied" Binding="{Binding appli}" IsReadOnly="True" />
                 <DataGridCheckBoxColumn Header="Replied" Binding="{Binding reply}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Agency" Binding="{Binding agency}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Staff" Binding="{Binding staff}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Email" Binding="{Binding email}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Mobile" Binding="{Binding mobile}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Phone" Binding="{Binding phone}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Phones" Binding="{Binding phones}" IsReadOnly="True" />
             </DataGrid.Columns>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>

@@ -8,12 +8,12 @@ namespace GridForm
 	static internal readonly string ConnectionString = Properties.Settings.Default.ConnectionString;
 	static private readonly string SQL_SELECT =
             "SELECT ctt_id, ctt_date, ctt_hhmm" +
-            ",[role],[location]" +
+            ",[role],[client],[location]" +
             ",appli,reply" +
             ",agency,staff" +
-            ",email,mobile,phone" +
+            ",email,phones" +
             ",remark,[more] " +
-            " FROM [dbo].[Job_Contacts]";
+            " FROM [dbo].[Job_Contacts_2]";
 
 	static internal DataTable MainTable()
 	{
